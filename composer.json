@@ -1,0 +1,8 @@
+{
+    "require": {
+        "nette/robot-loader": "^3.4",
+        "team-reflex/discord-php": "^7.0",
+        "symfony/mailer": "^6.0",
+        "symfony/google-mailer": "^6.0"
+    }
+}
