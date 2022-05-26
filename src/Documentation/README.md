@@ -8,9 +8,9 @@ Bots are added to guilds using invite links. But first, you will need to
 generate an invite link.
 
 To generate one for your bot, go here:
-https://discord.com/developers/applications/<bot_id>/oauth2/url-generator
+https://discord.com/developers/applications/bot_id/oauth2/url-generator
 
-Replace <bot_id> in the URL above with your bot's own ID.
+Replace `bot_id` in the URL above with your bot's own ID.
 
 During development, it is easiest to create an invite link using these params:
 - Scopes: bot
@@ -20,7 +20,9 @@ Later on, when your bot becomes ready for other guilds to use, you can
 restrict the permissions a bit further. But for development, this is fine.
 
 Here's an example invite link that would be generated:
-https://discord.com/api/oauth2/authorize?client_id=<bot_id>&permissions=8&scope=bot
+https://discord.com/api/oauth2/authorize?client_id=bot_id&permissions=8&scope=bot
+
+Where `bot_id` in the URL above with your bot's own ID.
 
 ## Add Bot Token to Project
 
@@ -29,11 +31,11 @@ Create a file named `conf/env.php` with the following contents:
 ```
 <?php
 
-$_ENV[ 'BOT_TOKEN' ] = '<bot_token>';
-$_ENV[ 'BOT_ID' ]    = '<bot_id>';
+$_ENV[ 'BOT_TOKEN' ] = 'bot_token';
+$_ENV[ 'BOT_ID' ]    = 'bot_id';
 ```
 
-Replace <bot_id> with your bot's ID, and <bot_token> with you're bot's token.
+Replace `bot_id` with your bot's ID, and `bot_token` with you're bot's token.
 
 ## Running your Bot
 
