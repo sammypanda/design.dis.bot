@@ -90,4 +90,4 @@ something like this:
 ```
 
 So, writing your own event handlers is as easy as creating a new class, then
-dropping it into the `src/Extensions/` folder. Happy hacking!
+dropping it into the `src/Extensions/` folder. *No other code change is required*.
