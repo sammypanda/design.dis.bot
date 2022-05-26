@@ -19,10 +19,10 @@ During development, it is easiest to create an invite link using these params:
 Later on, when your bot becomes ready for other guilds to use, you can
 restrict the permissions a bit further. But for development, this is fine.
 
-Here's an example invite link that would be generated:
+Here's an example invite link that would have resulted from using those params:
 https://discord.com/api/oauth2/authorize?client_id=bot_id&permissions=8&scope=bot
 
-Where `bot_id` in the URL above with your bot's own ID.
+Where `bot_id` in the URL above is your own bot's ID.
 
 ## Add Bot Token to Project
 
