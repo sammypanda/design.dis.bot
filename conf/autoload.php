@@ -8,3 +8,9 @@ $loader = new Nette\Loaders\RobotLoader;
 $loader->addDirectory( 'src' );
 $loader->setTempDirectory( 'temp' );
 $loader->register();
+
+#
+# ExtensionManager.php automagic.
+#
+$_ENV[ 'PROJECT_ROOT' ] = realpath(__DIR__.'/..');
+$_ENV[ 'EXT_DIR' ]      = $_ENV[ 'PROJECT_ROOT' ].'/src/Extensions';

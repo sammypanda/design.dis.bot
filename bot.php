@@ -7,14 +7,11 @@ try {
 # Import configuration files.
 #
 
-// PSR4 autoloader.
+// Autoloading stuff.
 require 'conf/autoload.php';
 
-// Local environment.
+// Per-user supplied local config (e.g. secret bot token). Not to be committed.
 require 'conf/env.php';
-
-// App-specific config.
-require 'conf/app.php';
 
 #
 # Bring the bot online.
