@@ -24,9 +24,9 @@ You can now create classes which do the same thing:
 
 class Hello implements MessageCreate {
 
-	public function message_create(Message $message, Discord $discord) {
-		// ...
-	}
+    public function message_create(Message $message, Discord $discord) {
+        // ...
+    }
 
 }
 ```
