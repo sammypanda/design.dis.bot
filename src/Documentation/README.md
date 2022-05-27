@@ -1,6 +1,7 @@
 # README
 
-General-purpose Bot Framework for Discord, built using DiscordPHP.
+General-purpose Bot Framework for Discord, powered by
+[DiscordPHP](https://github.com/discord-php/DiscordPHP).
 
 ## Key Features
 
@@ -78,10 +79,8 @@ $ php bot.php
 
 ### Create a Discord Application
 
-Create a Discord Application here:
-https://discord.com/developers/applications
-
-Skip this if you already have one.
+Create a Discord Application [here](https://discord.com/developers/applications)
+(skip this if you already have one).
 
 ### Add Bot Token to Project
 
