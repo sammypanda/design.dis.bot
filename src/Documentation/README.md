@@ -102,8 +102,9 @@ Type `php bot.php` to run your bot.
 We have provided you with `/src/Extensions/Hello.php` as a sample handler to
 help you get you started writing handlers of your own.
 
-To test out this handler go to your Discord Server. In any channel, type the
-word "hello". The bot should detect it and respond to it with a message.
+To test out this handler go to a Discord Server where your bot is installed.
+Ensure your bot has appropriate permissions in that server. In any channel,
+type the word "hello". Your should detect this and respond with a message.
 
 ### Understanding How it Works
 
