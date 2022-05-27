@@ -42,10 +42,9 @@ class Hello implements MessageCreate {
 ### Zero Code Change Required to Existing Code
 
 Each class you write is a truly drop-in module that, once placed in the
-`/src/Extensions` folder, gets picked up by the bot.
-
-So, using the example above, `/src/Extensions/Hello.php` would be picked up by
-the bot, and displayed during startup:
+`/src/Extensions` folder, gets picked up by the bot. So, using the example
+above, `/src/Extensions/Hello.php` would be picked up by the bot, and
+displayed during startup:
 
 ```
 $ php bot.php
@@ -63,11 +62,11 @@ This output tells us that your bot is listening for 1 event named
 tells us that there is a handler for the `MESSAGE_CREATE` event named
 `Soft321\Discord\Extensions\Hello`.
 
-This solves the problem of 1000+ line bot.php files.
+This *object-oriented* approach solves the problem of 1000+ line bot.php files.
 
 ### Multiple Event Handlers for the Same Event
 
-You can have multiple classes listening for the same event as well. So, if we
+You can have multiple classes listening for the same event. So, if we
 made a `Hello2` class that also implements `MessageCreate`, the bot would pick
 that up as well:
 
@@ -85,10 +84,12 @@ $ php bot.php
 
 ## Getting Started
 
-### Create a Discord Bot
+### Create a Discord Application
 
-If you have not already created a Discord bot on the Discord Developers
-Application Portal, do so now.
+Create a Discord Application here:
+https://discord.com/developers/applications
+
+Skip this if you already have one.
 
 ### Add Bot Token to Project
 
@@ -113,20 +114,20 @@ help you get you started writing handlers of your own.
 To test out this handler go to your Discord Server. In any channel, type the
 word "hello". The bot should detect it and respond to it with a message.
 
-### Writing your own Handlers
+### Understanding How it Works
 
 Open up `src/Extensions/Hello.php`, to see how it actually works. You should
 notice that it is a class named `Hello` which implements an interface named
-`MessageCreate`.
+`MessageCreate`. As long as this class implements that interface, it will be
+automatically picked up by the bot, and handle any `MESSAGE_CREATE` events
+sent to it.
 
-As long as this class implements that interface, it will be automatically
-picked up by the bot, and handle any `MESSAGE_CREATE` events sent to it.
+Try creating another class (e.g. `src/Extensions/Hello2.php`) that handles
+messages in a different way. Writing your own event handlers is as easy as
+creating a new class, then dropping it into the `src/Extensions/` folder.
 
-Further, you can create another class (e.g. `src/Extensions/Hello2.php`) that
-handles messages in a different way.
-
-So, writing your own event handlers is as easy as creating a new class, then
-dropping it into the `src/Extensions/` folder.
+### Writing Your own Handlers
 
 A full list of events is contained in the `src/Events` folder. You can handle
-any of these by creating a new class and implementing their interface.
+any of these by creating a new class and implementing the interface for that
+event.
