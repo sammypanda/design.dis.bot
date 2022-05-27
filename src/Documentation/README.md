@@ -22,18 +22,10 @@ You can now create classes which do the same thing:
 ```
 <?php
 
-namespace Soft321\Discord\Extensions;
-
-use \Soft321\Discord\Events\MessageCreate;
-use \Discord\Parts\Channel\Message;
-use \Discord\Discord;
-
 class Hello implements MessageCreate {
 
 	public function message_create(Message $message, Discord $discord) {
-
 		// ...
-
 	}
 
 }
