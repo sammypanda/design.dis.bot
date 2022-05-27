@@ -2,9 +2,13 @@
 
 namespace Soft321\Discord\Extensions;
 
-class Hello implements \Soft321\Discord\Events\MessageCreate {
+use \Soft321\Discord\Events\MessageCreate;
+use \Discord\Parts\Channel\Message;
+use \Discord\Discord;
 
-	public function message_create(\Discord\Parts\Channel\Message $message, \Discord\Discord $discord) {
+class Hello implements MessageCreate {
+
+	public function message_create(Message $message, Discord $discord) {
 
 		// DO NOT reply to a Bot message (prevent endless loop)!!!
 		if( $message->author->id !== $_ENV[ 'BOT_ID' ] ) {		
