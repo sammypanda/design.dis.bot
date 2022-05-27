@@ -104,12 +104,12 @@ help you get you started writing handlers of your own.
 
 To test out this handler go to a Discord Server where your bot is installed.
 Ensure your bot has appropriate permissions in that server. In any channel,
-type the word "hello". Your should detect this and respond with a message.
+type the word "hello". Your bot should detect this and respond with a message.
 
 ### Understanding How it Works
 
-Open up `src/Extensions/Hello.php`, to see how it actually works. You should
-notice that it is a class named `Hello` which implements an interface named
+Open up `src/Extensions/Hello.php`, to see how it actually works. Notice that
+there is a class named `Hello` which implements an interface named
 `MessageCreate`. As long as this class implements that interface, it will be
 automatically picked up by the bot, and handle any `MESSAGE_CREATE` events
 sent to it.
