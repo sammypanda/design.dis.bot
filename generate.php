@@ -35,7 +35,10 @@
     echo $RESET_STRING;
 
     /* --------------------------- Finish and clean up -------------------------- */
+    echo "Finishing up" . PHP_EOL;
 
+    unlink($release_file_name);
+    
     echo PHP_EOL;
 
     # NOTE: use $argc for count of arguments, argv[0] for file name, argv[1] for first argument
