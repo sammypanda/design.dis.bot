@@ -83,20 +83,30 @@ class ExtensionManager {
 
 		}
 
-		// Display nice CLI output of active / inactive events.
-		$out_fmt = "%d %s events: [%s";
-		printf( $out_fmt, count( $active ), 'active', PHP_EOL );
-		$out_fmt   = "%4s%s => [%s%8s%s%s%4s]%s";
-		foreach( $active as $key => $val ) {
-			printf(
-				$out_fmt, ' ', $key, PHP_EOL, ' ', implode( ', ' . PHP_EOL, $val ),
-				PHP_EOL, ' ', PHP_EOL
-			);
+		#
+		# Display nice CLI output.
+		#
+		
+		// Active events.
+		printf( "%d active events: [%s", count( $active ), PHP_EOL );
+		foreach( $active as $event_name => $events ) {
+			
+			printf( "%4s%s => [%s", ' ', $event_name, PHP_EOL );
+			foreach( $events as $event ) {
+				
+				printf( "%8s%s,%s", ' ', $event, PHP_EOL );
+				
+			}
+			printf( "%4s]%s", ' ', PHP_EOL ); 
+			
 		}
-		echo "]";
+		echo ']';
+		
+
+		// Inactive events.
 		echo PHP_EOL . PHP_EOL;
-		$out_fmt = "%d %s events: [ %s ]";
-		printf( $out_fmt, count( $inactive ), 'inactive', implode( ', ', $inactive ) );
+		$out_fmt = "%d inactive events: [ %s ]";
+		printf( $out_fmt, count( $inactive ), implode( ', ', $inactive ) );
 		echo PHP_EOL . PHP_EOL;
 
 	}
