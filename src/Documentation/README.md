@@ -1,5 +1,12 @@
 # README
 
+Dev Branch ✨
+
+- ~~Create Dev Branch~~
+- Finish the script used to generate and clarify what is needed (for releases)
+
+---
+
 General-purpose Bot Framework for Discord, powered by
 [DiscordPHP](https://github.com/discord-php/DiscordPHP).
 
