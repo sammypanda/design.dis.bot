@@ -8,6 +8,12 @@
     $release = "https://github.com/sammypanda/design.dis.bot/releases/download/v1/v1.0.0.zip";
     $elected_path = "./";
 
+    /* --------------------- [testing] Initial setup prompts -------------------- */
+    echo "[testing] press enter to skip: ";
+    $x = chop(fgets(STDIN));
+    $x_res = (!empty($x)) ? ($x . PHP_EOL) : ($x); # only line break if user input
+    echo $x_res;
+
     /* ------------------------ Fetching important files ------------------------ */
     echo "Fetching files" . PHP_EOL;
     
