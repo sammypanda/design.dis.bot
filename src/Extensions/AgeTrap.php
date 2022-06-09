@@ -11,8 +11,8 @@ class AgeTrap implements MessageReactionAdd {
 
 	public function message_reaction_add(MessageReaction $reaction, Discord $discord) {
 
-		// Ignore bot-added reactions.
-		if( $reaction->user_id !== $_ENV[ 'BOT_ID' ] ) {		
+		// Ignore Carl-bot added reactions, so we don't ban Carl.
+		if( $reaction->user_id !== '235148962103951360' ) {		
 
 			// If we're in the specified channel and
 			// the disallowed age range emoji is selected
