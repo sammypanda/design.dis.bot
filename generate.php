@@ -8,7 +8,7 @@
     $release = "https://github.com/sammypanda/design.dis.bot/releases/download/v1/v1.0.0.zip";
     $elected_path = "./";
 
-    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') { # if OS is Windows in nature
         $clear = system('cls');
     } else {
         $clear = system('clear');
