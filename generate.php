@@ -8,11 +8,27 @@
     $release = "https://github.com/sammypanda/design.dis.bot/releases/download/v1/v1.0.0.zip";
     $elected_path = "./";
 
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        $clear = system('cls');
+    } else {
+        $clear = system('clear');
+    }
+
     /* --------------------- [testing] Initial setup prompts -------------------- */
-    echo "[testing] press enter to skip: ";
-    $x = chop(fgets(STDIN));
-    $x_res = (!empty($x)) ? ($x . PHP_EOL) : ($x); # only line break if user input
-    echo $x_res;
+    function namingProcess($empty) {
+        echo ($empty) ? $GLOBALS['clear'] . "\033[1;31m" : '';
+        echo "Project Name: " . $GLOBALS["RESET_STRING"];
+        $x = chop(fgets(STDIN));
+        
+        if (!empty($x)) {
+            mkdir($x);
+            $GLOBALS["project"] = $x;
+        } else {
+            namingProcess(true);
+        }
+    }
+
+    namingProcess(false);
 
     /* ------------------------ Fetching important files ------------------------ */
     echo "Fetching files" . PHP_EOL;
@@ -32,7 +48,7 @@
 
     $zip = new ZipArchive;
     if ($zip->open($release_file_name) === true) {
-        $zip->extractTo($elected_path);
+        $zip->extractTo($elected_path . $project);
         $zip->close();                  
     } else {
         exit();
