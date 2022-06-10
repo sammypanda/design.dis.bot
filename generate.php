@@ -22,13 +22,13 @@
         
         if (!empty($x)) {
             mkdir($x);
-            $GLOBALS["project"] = $x;
+            return $x;
         } else {
             namingProcess(true);
         }
     }
 
-    namingProcess(false);
+    $project = namingProcess(false);
 
     /* ------------------------ Fetching important files ------------------------ */
     echo "Fetching files" . PHP_EOL;
