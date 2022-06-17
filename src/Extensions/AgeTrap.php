@@ -16,7 +16,7 @@ class AgeTrap implements MessageReactionAdd {
 
 			// If we're in the specified channel and
 			// the disallowed age range emoji is selected
-			if( $reaction->channel->name === 'demo' &&
+			if( $reaction->channel->name === 'rules' &&
 				$reaction->emoji->name === '🚨' ) {
 
 				// Ban the user.
